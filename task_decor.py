@@ -1,18 +1,18 @@
 from time import time
 
 
-def timer(f):
-    def wrapped():
+def timer(func):
+    def wrapped(x):
         new_time = time()
-        return f() - new_time
+        func(x)
+        return time() - new_time
 
     return wrapped
 
 
 @timer
-def func():
-    start = time()
-    return start
+def square(x):
+    return x * x
 
 
-print(func())
+print(square(2))
