@@ -5,7 +5,8 @@ def timer(func):
     def wrapped(x):
         new_time = time()
         func(x)
-        return time() - new_time
+        new_time1=time()
+        return new_time1 - new_time
 
     return wrapped
 
